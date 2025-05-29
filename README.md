@@ -40,8 +40,8 @@ syn_data/
 
 ```bash
 # Clone the repository
-git clone https://github.com/vi14m/syn_data.git
-cd syn_data
+git clone https://github.com/vi14m/synthetic-data-generator.git
+cd synthetic-data-generator.git
 
 # Create and activate a virtual environment (optional but recommended)
 python -m venv venv
