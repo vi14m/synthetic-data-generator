@@ -1,0 +1,128 @@
+2025-05-28 20:40:36,904 - __main__ - INFO - Loading data from C:\Users\User\Downloads\adult.csv
+2025-05-28 20:40:36,921 - __main__ - ERROR - Error: [Errno 13] Permission denied: 'C:\\Users\\User\\Downloads\\adult.csv'
+2025-05-28 20:42:14,356 - __main__ - INFO - Loading data from C:/Users/User/Downloads/adult.csv
+2025-05-28 20:42:14,436 - __main__ - ERROR - Error: [Errno 13] Permission denied: 'C:/Users/User/Downloads/adult.csv'
+2025-05-28 20:43:38,932 - __main__ - INFO - Loading data from C:/Users/User/Downloads/adult/adult.csv
+2025-05-28 20:43:39,038 - __main__ - INFO - Loaded data with shape (32561, 15)
+2025-05-28 20:43:39,038 - __main__ - INFO - Initializing ctgan generator
+2025-05-28 20:43:39,039 - __main__ - ERROR - Error: 'GeneratorFactory' object has no attribute 'create_generator'
+2025-05-28 20:46:12,966 - __main__ - INFO - Loading data from C:/Users/User/Downloads/adult/adult.csv
+2025-05-28 20:46:13,145 - __main__ - INFO - Loaded data with shape (32561, 15)
+2025-05-28 20:46:13,146 - __main__ - INFO - Initializing ctgan generator
+2025-05-28 20:46:13,147 - models.generator_factory - INFO - Creating generator of type: ctgan
+2025-05-28 20:46:13,148 - __main__ - INFO - Training generator
+2025-05-28 20:46:13,148 - models.ctgan_generator - INFO - Fitting CTGAN model on data with shape (32561, 15)
+2025-05-28 20:46:13,181 - models.ctgan_generator - INFO - Identified 10 discrete columns and 5 continuous columns
+2025-05-28 20:46:13,404 - sdv.metadata.single_table - INFO - Detected metadata:
+2025-05-28 20:46:13,405 - sdv.metadata.single_table - INFO - {
+    "METADATA_SPEC_VERSION": "SINGLE_TABLE_V1",
+    "columns": {
+        "age": {
+            "sdtype": "numerical"
+        },
+        "workclass": {
+            "sdtype": "categorical"
+        },
+        "fnlwgt": {
+            "sdtype": "numerical"
+        },
+        "education": {
+            "sdtype": "categorical"
+        },
+        "education.num": {
+            "sdtype": "numerical"
+        },
+        "marital.status": {
+            "sdtype": "categorical"
+        },
+        "occupation": {
+            "sdtype": "categorical"
+        },
+        "relationship": {
+            "sdtype": "categorical"
+        },
+        "race": {
+            "sdtype": "categorical"
+        },
+        "sex": {
+            "sdtype": "categorical"
+        },
+        "capital.gain": {
+            "sdtype": "numerical"
+        },
+        "capital.loss": {
+            "sdtype": "numerical"
+        },
+        "hours.per.week": {
+            "sdtype": "numerical"
+        },
+        "native.country": {
+            "sdtype": "categorical"
+        },
+        "income": {
+            "sdtype": "categorical"
+        }
+    }
+}
+2025-05-28 20:46:13,407 - models.ctgan_generator - ERROR - Error fitting CTGAN model: 'CTGANGenerator' object has no attribute 'epochs'
+2025-05-28 20:46:13,408 - __main__ - ERROR - Error: 'CTGANGenerator' object has no attribute 'epochs'
+2025-05-29 14:51:02,163 - __main__ - INFO - Loading data from C:\Users\User\Downloads\adult\adult.csv
+2025-05-29 14:51:02,362 - __main__ - INFO - Loaded data with shape (32561, 15)
+2025-05-29 14:51:02,364 - __main__ - INFO - Initializing ctgan generator
+2025-05-29 14:51:02,364 - models.generator_factory - INFO - Creating generator of type: ctgan
+2025-05-29 14:51:02,364 - __main__ - INFO - Training generator
+2025-05-29 14:51:02,365 - models.ctgan_generator - INFO - Fitting CTGAN model on data with shape (32561, 15)
+2025-05-29 14:51:02,384 - models.ctgan_generator - INFO - Identified 10 discrete columns and 5 continuous columns
+2025-05-29 14:51:02,595 - sdv.metadata.single_table - INFO - Detected metadata:
+2025-05-29 14:51:02,596 - sdv.metadata.single_table - INFO - {
+    "columns": {
+        "age": {
+            "sdtype": "numerical"
+        },
+        "workclass": {
+            "sdtype": "categorical"
+        },
+        "fnlwgt": {
+            "sdtype": "numerical"
+        },
+        "education": {
+            "sdtype": "categorical"
+        },
+        "education.num": {
+            "sdtype": "numerical"
+        },
+        "marital.status": {
+            "sdtype": "categorical"
+        },
+        "occupation": {
+            "sdtype": "categorical"
+        },
+        "relationship": {
+            "sdtype": "categorical"
+        },
+        "race": {
+            "sdtype": "categorical"
+        },
+        "sex": {
+            "sdtype": "categorical"
+        },
+        "capital.gain": {
+            "sdtype": "numerical"
+        },
+        "capital.loss": {
+            "sdtype": "numerical"
+        },
+        "hours.per.week": {
+            "sdtype": "numerical"
+        },
+        "native.country": {
+            "sdtype": "categorical"
+        },
+        "income": {
+            "sdtype": "categorical"
+        }
+    },
+    "METADATA_SPEC_VERSION": "SINGLE_TABLE_V1"
+}
+2025-05-29 14:51:02,600 - models.ctgan_generator - ERROR - Error fitting CTGAN model: 'CTGANGenerator' object has no attribute 'epochs'
+2025-05-29 14:51:02,600 - __main__ - ERROR - Error: 'CTGANGenerator' object has no attribute 'epochs'

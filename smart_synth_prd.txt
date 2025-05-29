@@ -1,0 +1,112 @@
+
+Smart Synthetic Data Generator - Product Requirements Document (PRD)
+=====================================================================
+
+1. Product Overview
+--------------------
+Name: SmartSynth: A Domain-Agnostic Synthetic Data Generator
+
+Description:
+SmartSynth is a multi-modal, privacy-preserving, and domain-agnostic synthetic data generation tool that enables ML practitioners and data scientists to generate high-quality, realistic datasets across domains such as healthcare, finance, and retail.
+
+2. Objectives
+-------------
+- Learn distributions from small to medium real datasets using generative models.
+- Generate privacy-safe, non-traceable synthetic datasets.
+- Support multiple modalities (tabular, time-series, text, image).
+- Improve downstream model performance via smart augmentation.
+
+3. Key Features
+---------------
+- Multi-modal data support: Tabular, time-series, NLP text, image
+- Adaptive generation: Uses CTGAN, TimeGAN, LLM, or diffusion models based on data type
+- Schema-aware constraints: Maintains type, correlation, uniqueness, and domain logic
+- Evaluation dashboard: Visual and statistical similarity + ML performance check
+- Privacy assurance: Differential privacy, k-anonymity checks
+- Export-ready: Outputs CSV/JSON, integrates with ML pipelines
+- Web UI: Hugging Face Space for easy access and demo
+- API Access: REST API for programmatic dataset generation
+
+4. System Architecture
+-----------------------
+- Real Dataset Upload → Data Profiler → Generator Selector
+- Generator options: CTGAN, TimeGAN, GPT-2, Diffusion models
+- Privacy Filter: Ensures data is differentially private
+- Output: Download synthetic data in CSV/JSON
+
+5. User Interface (Hugging Face Space)
+---------------------------------------
+- Framework: Streamlit
+- Backend: PyTorch, Scikit-learn, SDMetrics
+- UI Flow: Upload → Configure → Generate → Evaluate → Download
+
+6. Use Cases
+------------
+- Healthcare: Patient EHR synthesis
+- Finance: Transaction fraud sample balancing
+- Retail: Product purchase history
+- Text: Chat or QA dataset expansion
+
+7. Technical Stack
+-------------------
+- Frontend: Streamlit
+- Generator Models: CTGAN (SDV), TimeGAN, GPT-2, Diffusers
+- Profiling & Validation: Pandas-Profiling, SDMetrics
+- Backend APIs: FastAPI (optional)
+- Deployment: Hugging Face Spaces, Docker
+
+8. Privacy & Compliance
+------------------------
+- Distance-based similarity filters
+- Membership inference detection
+- Noise addition at latent layers
+- Compliance: HIPAA, GDPR, ISO/IEC 27001
+
+9. Evaluation Metrics
+----------------------
+- Statistical: KS Test, Wasserstein Distance, JSD, Correlation difference
+- Privacy: Nearest neighbor distance, Membership inference AUC
+- Task-Specific: Accuracy, F1 (Synthetic train, Real test)
+
+10. MVP Scope (Phase 1)
+------------------------
+- Upload & auto data profiling (tabular)
+- Tabular generation with CTGAN (via SDV)
+- Distribution visualization
+- Synthetic vs Real metrics
+- Hugging Face Space Streamlit UI
+
+11. Future Enhancements
+------------------------
+- Time-series generator with TimeGAN/TimeLLM
+- Image generation using Diffusers
+- Text generation using prompt-controlled LLMs
+- Fine-grained DP settings (ε values)
+- Domain-specific schema templates
+
+12. Hugging Face Space Launch
+------------------------------
+Directory Structure:
+- app.py
+- models/: ctgan_generator.py, timegan_generator.py, privacy_filter.py
+- utils/: profiler.py, visualizer.py, evaluator.py
+- requirements.txt, README.md, .huggingface/spaces.yaml
+
+requirements.txt:
+- streamlit, scikit-learn, sdmetrics, sdv, pandas-profiling, transformers, torch
+
+spaces.yaml:
+sdk: streamlit
+python_version: 3.10
+hardware: gpu
+app_file: app.py
+
+13. Deliverables
+-----------------
+- app.py
+- models/ (CTGAN, TimeGAN modules)
+- profiler.py
+- evaluator.py
+- Hugging Face Space demo
+- Documentation
+

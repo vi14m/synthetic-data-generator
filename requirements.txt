@@ -1,0 +1,33 @@
+# Core dependencies
+streamlit
+pandas
+numpy
+scikit-learn
+matplotlib
+seaborn
+xlsxwriter
+
+# Synthetic data generation
+sdv
+sdmetrics
+ydata-synthetic
+ctgan
+
+# Data profiling
+ydata-profiling
+
+# Privacy tools
+diffprivlib
+
+# Deep learning
+torch
+transformers
+diffusers
+
+# API (optional)
+fastapi
+uvicorn
+
+# Utilities
+python-dotenv
+tqdm
