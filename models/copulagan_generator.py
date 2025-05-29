@@ -64,7 +64,7 @@ class CopulaGANGenerator(BaseGenerator):
             self.model = CopulaGAN(
                 metadata=self.metadata,
                 enforce_min_max_values=True,
-                enforce_rounding=False,
+                enforce_rounding=True,  # Enable rounding for integer columns
                 numerical_distributions=self.model_kwargs.get('numerical_distributions', None),
                 epochs=self.epochs,
                 batch_size=self.batch_size,
@@ -74,6 +74,7 @@ class CopulaGANGenerator(BaseGenerator):
             )
 
             self.logger.info(f"Fitting CopulaGAN model on data with shape {data.shape}")
+            self.logger.info(f"Training CopulaGAN with epochs={self.epochs}, batch_size={self.batch_size}")
             self.model.fit(data)
             self.logger.info("CopulaGAN model fitting completed")
 
@@ -98,13 +99,13 @@ class CopulaGANGenerator(BaseGenerator):
         """
         if self.model is None:
             raise RuntimeError("Model has not been fitted yet. Call fit() first.")
-
+            
         try:
             self.logger.info(f"Generating {num_samples} synthetic samples")
             synthetic_data = self.model.sample(num_samples)
             self.logger.info(f"Generated synthetic data with shape {synthetic_data.shape}")
             return synthetic_data
-
+            
         except Exception as e:
             self.logger.error(f"Error generating synthetic data: {str(e)}")
             raise

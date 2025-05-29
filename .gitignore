@@ -1,0 +1,43 @@
+# Ignore operating system files
+.DS_Store
+Thumbs.db
+
+# Ignore IDE files
+.vscode/
+.idea/
+*.iml
+
+# Ignore build and compilation files
+build/
+target/
+*.class
+*.o
+*.obj
+
+# Ignore package manager files
+node_modules/
+package-lock.json
+yarn.lock
+pom.xml
+
+# Ignore Python files
+__pycache__/
+*.pyc
+
+# Ignore log files
+*.log
+*.tmp
+logs/
+log/
+
+# Ignore environment files
+.env
+*.env.*
+
+# Ignore other miscellaneous files
+*.zip
+*.rar
+*.tar
+*.gz
+*.bz2
+*.7z

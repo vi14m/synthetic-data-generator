@@ -33,6 +33,9 @@ class TVAEGenerator(BaseGenerator):
     
     def fit(self, data: pd.DataFrame):
         """Fit the TVAE model to the input data."""
+        if not self.validate_data(data):
+            raise ValueError("Invalid data provided for fitting.")
+            
         try:
             self._identify_column_types(data)
             
@@ -41,7 +44,7 @@ class TVAEGenerator(BaseGenerator):
             self.model = TVAE(
                 metadata=metadata_obj,
                 enforce_min_max_values=True,
-                enforce_rounding=False,
+                enforce_rounding=True,  # Enable rounding for integer columns
                 epochs=self.epochs,
                 batch_size=self.batch_size,
                 embedding_dim=self.embedding_dim,
@@ -50,6 +53,7 @@ class TVAEGenerator(BaseGenerator):
             )
             
             self.logger.info(f"Fitting TVAE model on data with shape {data.shape}")
+            self.logger.info(f"Training TVAE with epochs={self.epochs}, batch_size={self.batch_size}")
             self.model.fit(data)
             self.logger.info("TVAE model fitting completed")
             

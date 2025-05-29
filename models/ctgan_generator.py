@@ -41,6 +41,17 @@ class CTGANGenerator(BaseGenerator):
 
             # Create metadata if not provided
             metadata_obj = self.metadata if self.metadata is not None else self._get_metadata(data)
+            
+            # Ensure epochs attribute is set
+            if not hasattr(self, 'epochs'):
+                self.logger.warning("'epochs' attribute not set. Using default value of 300.")
+                self.epochs = 300
+                
+            if not hasattr(self, 'batch_size'):
+                self.batch_size = 500
+                
+            if not hasattr(self, 'embedding_dim'):
+                self.embedding_dim = 128
 
             # Initialize model with metadata
             self.model = CTGAN(
@@ -49,11 +60,12 @@ class CTGANGenerator(BaseGenerator):
                 batch_size=self.batch_size,
                 embedding_dim=self.embedding_dim,
                 enforce_min_max_values=True,
-                enforce_rounding=False,
+                enforce_rounding=True,  # Enable rounding for integer columns
                 verbose=True,
                 **self.model_kwargs
             )
 
+            self.logger.info(f"Training CTGAN with epochs={self.epochs}, batch_size={self.batch_size}")
             self.model.fit(data)
             self.logger.info("CTGAN model fitting completed")
             return self

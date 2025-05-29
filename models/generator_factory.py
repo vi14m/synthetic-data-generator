@@ -49,7 +49,22 @@ class GeneratorFactory:
             raise ValueError(f"Unsupported generator type: {generator_type}")
         
         self.logger.info(f"Creating generator of type: {generator_type}")
-        return self.generators[generator_type](**kwargs)
+        
+        # Extract configuration parameters
+        config_params = {}
+        for param in ['epochs', 'batch_size', 'embedding_dim']:
+            if param in kwargs:
+                config_params[param] = kwargs.pop(param)
+        
+        # Create the generator instance
+        generator = self.generators[generator_type](**kwargs)
+        
+        # Configure the generator if configuration parameters are provided
+        if config_params:
+            self.logger.info(f"Configuring {generator_type} with parameters: {config_params}")
+            generator.configure(**config_params)
+            
+        return generator
     
     def get_recommended_generator(self, data, data_type: str = None):
         """Automatically recommend the best generator based on the data characteristics.

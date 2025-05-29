@@ -1,20 +1,15 @@
-2025-05-28 20:40:36,904 - __main__ - INFO - Loading data from C:\Users\User\Downloads\adult.csv
-2025-05-28 20:40:36,921 - __main__ - ERROR - Error: [Errno 13] Permission denied: 'C:\\Users\\User\\Downloads\\adult.csv'
-2025-05-28 20:42:14,356 - __main__ - INFO - Loading data from C:/Users/User/Downloads/adult.csv
-2025-05-28 20:42:14,436 - __main__ - ERROR - Error: [Errno 13] Permission denied: 'C:/Users/User/Downloads/adult.csv'
-2025-05-28 20:43:38,932 - __main__ - INFO - Loading data from C:/Users/User/Downloads/adult/adult.csv
-2025-05-28 20:43:39,038 - __main__ - INFO - Loaded data with shape (32561, 15)
-2025-05-28 20:43:39,038 - __main__ - INFO - Initializing ctgan generator
-2025-05-28 20:43:39,039 - __main__ - ERROR - Error: 'GeneratorFactory' object has no attribute 'create_generator'
-2025-05-28 20:46:12,966 - __main__ - INFO - Loading data from C:/Users/User/Downloads/adult/adult.csv
-2025-05-28 20:46:13,145 - __main__ - INFO - Loaded data with shape (32561, 15)
-2025-05-28 20:46:13,146 - __main__ - INFO - Initializing ctgan generator
-2025-05-28 20:46:13,147 - models.generator_factory - INFO - Creating generator of type: ctgan
-2025-05-28 20:46:13,148 - __main__ - INFO - Training generator
-2025-05-28 20:46:13,148 - models.ctgan_generator - INFO - Fitting CTGAN model on data with shape (32561, 15)
-2025-05-28 20:46:13,181 - models.ctgan_generator - INFO - Identified 10 discrete columns and 5 continuous columns
-2025-05-28 20:46:13,404 - sdv.metadata.single_table - INFO - Detected metadata:
-2025-05-28 20:46:13,405 - sdv.metadata.single_table - INFO - {
+
+2025-05-29 16:38:37,645 - __main__ - INFO - Loading data from C:\Users\User\Downloads\adult\adult.csv
+2025-05-29 16:38:37,721 - __main__ - INFO - Loaded data with shape (32561, 15)
+2025-05-29 16:38:37,722 - __main__ - INFO - Initializing ctgan generator
+2025-05-29 16:38:37,722 - models.generator_factory - INFO - Creating generator of type: ctgan
+2025-05-29 16:38:37,722 - models.generator_factory - INFO - Configuring ctgan with parameters: {'epochs': 300, 'batch_size': 500, 'embedding_dim': 128}
+2025-05-29 16:38:37,723 - models.ctgan_generator - INFO - Configured CTGAN with epochs=300, batch_size=500, embedding_dim=128
+2025-05-29 16:38:37,723 - __main__ - INFO - Training generator
+2025-05-29 16:38:37,723 - models.ctgan_generator - INFO - Fitting CTGAN model on data with shape (32561, 15)
+2025-05-29 16:38:37,726 - models.ctgan_generator - INFO - Identified 10 discrete columns and 5 continuous columns
+2025-05-29 16:38:37,821 - sdv.metadata.single_table - INFO - Detected metadata:
+2025-05-29 16:38:37,822 - sdv.metadata.single_table - INFO - {
     "METADATA_SPEC_VERSION": "SINGLE_TABLE_V1",
     "columns": {
         "age": {
@@ -64,17 +59,47 @@
         }
     }
 }
-2025-05-28 20:46:13,407 - models.ctgan_generator - ERROR - Error fitting CTGAN model: 'CTGANGenerator' object has no attribute 'epochs'
-2025-05-28 20:46:13,408 - __main__ - ERROR - Error: 'CTGANGenerator' object has no attribute 'epochs'
-2025-05-29 14:51:02,163 - __main__ - INFO - Loading data from C:\Users\User\Downloads\adult\adult.csv
-2025-05-29 14:51:02,362 - __main__ - INFO - Loaded data with shape (32561, 15)
-2025-05-29 14:51:02,364 - __main__ - INFO - Initializing ctgan generator
-2025-05-29 14:51:02,364 - models.generator_factory - INFO - Creating generator of type: ctgan
-2025-05-29 14:51:02,364 - __main__ - INFO - Training generator
-2025-05-29 14:51:02,365 - models.ctgan_generator - INFO - Fitting CTGAN model on data with shape (32561, 15)
-2025-05-29 14:51:02,384 - models.ctgan_generator - INFO - Identified 10 discrete columns and 5 continuous columns
-2025-05-29 14:51:02,595 - sdv.metadata.single_table - INFO - Detected metadata:
-2025-05-29 14:51:02,596 - sdv.metadata.single_table - INFO - {
+2025-05-29 16:38:37,823 - models.ctgan_generator - INFO - Enhancing metadata with detailed type specifications and bounds
+2025-05-29 16:38:37,824 - models.ctgan_generator - INFO - Enhanced column 'age': Int32
+2025-05-29 16:38:37,824 - models.ctgan_generator - INFO - Enhanced column 'fnlwgt': Int32
+2025-05-29 16:38:37,825 - models.ctgan_generator - INFO - Enhanced column 'education.num': Int32
+2025-05-29 16:38:37,826 - models.ctgan_generator - INFO - Enhanced column 'capital.gain': Int32
+2025-05-29 16:38:37,826 - models.ctgan_generator - INFO - Enhanced column 'capital.loss': Int32
+2025-05-29 16:38:37,827 - models.ctgan_generator - INFO - Enhanced column 'hours.per.week': Int32
+2025-05-29 16:38:37,853 - SingleTableSynthesizer - INFO - {'EVENT': 'Instance', 'TIMESTAMP': datetime.datetime(2025, 5, 29, 16, 38, 37, 853869), 'SYNTHESIZER CLASS NAME': 'CTGANSynthesizer', 'SYNTHESIZER ID': 'CTGANSynthesizer_1.21.0_51f2b07f82e84c6ca4a89df056541080'}
+2025-05-29 16:38:37,855 - models.ctgan_generator - INFO - Training CTGAN with epochs=300, batch_size=500
+2025-05-29 16:38:37,856 - SingleTableSynthesizer - INFO - {'EVENT': 'Fit', 'TIMESTAMP': datetime.datetime(2025, 5, 29, 16, 38, 37, 856084), 'SYNTHESIZER CLASS NAME': 'CTGANSynthesizer', 'SYNTHESIZER ID': 'CTGANSynthesizer_1.21.0_51f2b07f82e84c6ca4a89df056541080', 'TOTAL NUMBER OF TABLES': 1, 'TOTAL NUMBER OF ROWS': 32561, 'TOTAL NUMBER OF COLUMNS': 15}
+2025-05-29 16:38:37,991 - sdv.data_processing.data_processor - INFO - Fitting table  metadata
+2025-05-29 16:38:38,002 - sdv.data_processing.data_processor - INFO - Fitting formatters for table 
+2025-05-29 16:38:38,014 - sdv.data_processing.data_processor - INFO - Fitting constraints for table 
+2025-05-29 16:38:38,015 - sdv.data_processing.data_processor - INFO - Setting the configuration for the ``HyperTransformer`` for table 
+2025-05-29 16:38:38,017 - sdv.data_processing.data_processor - INFO - Fitting HyperTransformer for table 
+2025-05-29 16:38:38,249 - SingleTableSynthesizer - INFO - {'EVENT': 'Fit processed data', 'TIMESTAMP': datetime.datetime(2025, 5, 29, 16, 38, 38, 249484), 'SYNTHESIZER CLASS NAME': 'CTGANSynthesizer', 'SYNTHESIZER ID': 'CTGANSynthesizer_1.21.0_51f2b07f82e84c6ca4a89df056541080', 'TOTAL NUMBER OF TABLES': 1, 'TOTAL NUMBER OF ROWS': 32561, 'TOTAL NUMBER OF COLUMNS': 15}
+2025-05-29 16:38:38,291 - rdt.transformers.null - INFO - Guidance: There are no missing values in column age. Extra column not created.
+2025-05-29 16:38:43,042 - rdt.transformers.null - INFO - Guidance: There are no missing values in column fnlwgt. Extra column not created.
+2025-05-29 16:38:47,821 - rdt.transformers.null - INFO - Guidance: There are no missing values in column education.num. Extra column not created.
+2025-05-29 16:38:52,032 - rdt.transformers.null - INFO - Guidance: There are no missing values in column capital.gain. Extra column not created.
+2025-05-29 16:38:55,163 - rdt.transformers.null - INFO - Guidance: There are no missing values in column capital.loss. Extra column not created.
+2025-05-29 16:38:57,970 - rdt.transformers.null - INFO - Guidance: There are no missing values in column hours.per.week. Extra column not created.
+2025-05-29 17:05:59,935 - models.ctgan_generator - INFO - CTGAN model fitting completed
+2025-05-29 17:05:59,935 - __main__ - INFO - Generator training completed
+2025-05-29 17:05:59,936 - __main__ - INFO - Generating 1000 synthetic samples
+2025-05-29 17:05:59,936 - models.ctgan_generator - INFO - Generating 1000 synthetic samples
+2025-05-29 17:06:00,052 - SingleTableSynthesizer - INFO - {'EVENT': 'Sample', 'TIMESTAMP': datetime.datetime(2025, 5, 29, 17, 5, 59, 936760), 'SYNTHESIZER CLASS NAME': 'CTGANSynthesizer', 'SYNTHESIZER ID': 'CTGANSynthesizer_1.21.0_51f2b07f82e84c6ca4a89df056541080', 'TOTAL NUMBER OF TABLES': 1, 'TOTAL NUMBER OF ROWS': 1000, 'TOTAL NUMBER OF COLUMNS': 15}
+2025-05-29 17:06:00,052 - models.ctgan_generator - INFO - Generated synthetic data with shape (1000, 15)
+2025-05-29 17:06:00,053 - models.ctgan_generator - ERROR - Error generating synthetic data: 'NoneType' object has no attribute 'columns'
+2025-05-29 17:06:00,053 - __main__ - ERROR - Error: 'NoneType' object has no attribute 'columns'
+2025-05-29 17:22:53,434 - __main__ - INFO - Loading data from C:\Users\User\Downloads\adult\adult.csv
+2025-05-29 17:22:53,631 - __main__ - INFO - Loaded data with shape (32561, 15)
+2025-05-29 17:22:53,633 - __main__ - INFO - Initializing ctgan generator
+2025-05-29 17:22:53,634 - models.generator_factory - INFO - Creating generator of type: ctgan
+2025-05-29 17:22:53,634 - models.generator_factory - INFO - Configuring ctgan with parameters: {'epochs': 10, 'batch_size': 500, 'embedding_dim': 128}
+2025-05-29 17:22:53,635 - models.ctgan_generator - INFO - Configured CTGAN with epochs=10, batch_size=500, embedding_dim=128
+2025-05-29 17:22:53,636 - __main__ - INFO - Training generator
+2025-05-29 17:22:53,636 - models.ctgan_generator - INFO - Fitting CTGAN model on data with shape (32561, 15)
+2025-05-29 17:22:53,648 - models.ctgan_generator - INFO - Identified 10 discrete columns and 5 continuous columns
+2025-05-29 17:22:53,881 - sdv.metadata.single_table - INFO - Detected metadata:
+2025-05-29 17:22:53,883 - sdv.metadata.single_table - INFO - {
     "columns": {
         "age": {
             "sdtype": "numerical"
@@ -124,5 +149,34 @@
     },
     "METADATA_SPEC_VERSION": "SINGLE_TABLE_V1"
 }
-2025-05-29 14:51:02,600 - models.ctgan_generator - ERROR - Error fitting CTGAN model: 'CTGANGenerator' object has no attribute 'epochs'
-2025-05-29 14:51:02,600 - __main__ - ERROR - Error: 'CTGANGenerator' object has no attribute 'epochs'
+2025-05-29 17:22:53,884 - models.ctgan_generator - INFO - Enhancing metadata with detailed type specifications and bounds
+2025-05-29 17:22:53,885 - models.ctgan_generator - INFO - Enhanced column 'age': Int32
+2025-05-29 17:22:53,887 - models.ctgan_generator - INFO - Enhanced column 'fnlwgt': Int32
+2025-05-29 17:22:53,888 - models.ctgan_generator - INFO - Enhanced column 'education.num': Int32
+2025-05-29 17:22:53,890 - models.ctgan_generator - INFO - Enhanced column 'capital.gain': Int32
+2025-05-29 17:22:53,892 - models.ctgan_generator - INFO - Enhanced column 'capital.loss': Int32
+2025-05-29 17:22:53,892 - models.ctgan_generator - INFO - Enhanced column 'hours.per.week': Int32
+2025-05-29 17:22:53,934 - SingleTableSynthesizer - INFO - {'EVENT': 'Instance', 'TIMESTAMP': datetime.datetime(2025, 5, 29, 17, 22, 53, 934715), 'SYNTHESIZER CLASS NAME': 'CTGANSynthesizer', 'SYNTHESIZER ID': 'CTGANSynthesizer_1.21.0_3c484229dceb4771893371e552703728'}
+2025-05-29 17:22:53,936 - models.ctgan_generator - INFO - Training CTGAN with epochs=10, batch_size=500
+2025-05-29 17:22:53,937 - SingleTableSynthesizer - INFO - {'EVENT': 'Fit', 'TIMESTAMP': datetime.datetime(2025, 5, 29, 17, 22, 53, 937505), 'SYNTHESIZER CLASS NAME': 'CTGANSynthesizer', 'SYNTHESIZER ID': 'CTGANSynthesizer_1.21.0_3c484229dceb4771893371e552703728', 'TOTAL NUMBER OF TABLES': 1, 'TOTAL NUMBER OF ROWS': 32561, 'TOTAL NUMBER OF COLUMNS': 15}
+2025-05-29 17:22:54,341 - sdv.data_processing.data_processor - INFO - Fitting table  metadata
+2025-05-29 17:22:54,353 - sdv.data_processing.data_processor - INFO - Fitting formatters for table 
+2025-05-29 17:22:54,380 - sdv.data_processing.data_processor - INFO - Fitting constraints for table 
+2025-05-29 17:22:54,381 - sdv.data_processing.data_processor - INFO - Setting the configuration for the ``HyperTransformer`` for table 
+2025-05-29 17:22:54,382 - sdv.data_processing.data_processor - INFO - Fitting HyperTransformer for table 
+2025-05-29 17:22:54,935 - SingleTableSynthesizer - INFO - {'EVENT': 'Fit processed data', 'TIMESTAMP': datetime.datetime(2025, 5, 29, 17, 22, 54, 935188), 'SYNTHESIZER CLASS NAME': 'CTGANSynthesizer', 'SYNTHESIZER ID': 'CTGANSynthesizer_1.21.0_3c484229dceb4771893371e552703728', 'TOTAL NUMBER OF TABLES': 1, 'TOTAL NUMBER OF ROWS': 32561, 'TOTAL NUMBER OF COLUMNS': 15}
+2025-05-29 17:22:55,049 - rdt.transformers.null - INFO - Guidance: There are no missing values in column age. Extra column not created.
+2025-05-29 17:23:04,995 - rdt.transformers.null - INFO - Guidance: There are no missing values in column fnlwgt. Extra column not created.
+2025-05-29 17:23:14,564 - rdt.transformers.null - INFO - Guidance: There are no missing values in column education.num. Extra column not created.
+2025-05-29 17:23:25,063 - rdt.transformers.null - INFO - Guidance: There are no missing values in column capital.gain. Extra column not created.
+2025-05-29 17:23:34,565 - rdt.transformers.null - INFO - Guidance: There are no missing values in column capital.loss. Extra column not created.
+2025-05-29 17:23:44,066 - rdt.transformers.null - INFO - Guidance: There are no missing values in column hours.per.week. Extra column not created.
+2025-05-29 17:26:39,903 - models.ctgan_generator - INFO - CTGAN model fitting completed
+2025-05-29 17:26:39,904 - __main__ - INFO - Generator training completed
+2025-05-29 17:26:39,904 - __main__ - INFO - Generating 100 synthetic samples
+2025-05-29 17:26:39,906 - models.ctgan_generator - INFO - Generating 100 synthetic samples
+2025-05-29 17:26:40,315 - SingleTableSynthesizer - INFO - {'EVENT': 'Sample', 'TIMESTAMP': datetime.datetime(2025, 5, 29, 17, 26, 39, 906833), 'SYNTHESIZER CLASS NAME': 'CTGANSynthesizer', 'SYNTHESIZER ID': 'CTGANSynthesizer_1.21.0_3c484229dceb4771893371e552703728', 'TOTAL NUMBER OF TABLES': 1, 'TOTAL NUMBER OF ROWS': 100, 'TOTAL NUMBER OF COLUMNS': 15}
+2025-05-29 17:26:40,316 - models.ctgan_generator - INFO - Generated synthetic data with shape (100, 15)
+2025-05-29 17:26:40,317 - __main__ - INFO - Generated synthetic data with shape (100, 15)
+2025-05-29 17:26:40,318 - __main__ - INFO - Saving synthetic data to C:\Users\User\Downloads\adult\output.csv in csv format
+2025-05-29 17:26:40,347 - __main__ - INFO - Synthetic data saved successfully

@@ -221,17 +221,54 @@ class BaseGenerator(ABC):
         }
 
     def _get_metadata(self, data: pd.DataFrame) -> SingleTableMetadata:
-        """Generate SDV SingleTableMetadata from the input DataFrame.
+        """Generate SDV SingleTableMetadata from the input DataFrame with enhanced type information.
 
         Args:
             data (pd.DataFrame): Input DataFrame.
 
         Returns:
-            SingleTableMetadata: Automatically inferred metadata object.
+            SingleTableMetadata: Enhanced metadata object with type specifications and bounds.
         """
         if not self.validate_data(data):
             raise ValueError("Invalid or empty DataFrame provided for metadata generation.")
 
+        # Create basic metadata
         metadata = SingleTableMetadata()
         metadata.detect_from_dataframe(data)
+        
+        # Enhance metadata with additional type information and bounds
+        self._enhance_metadata(metadata, data)
+        
+        return metadata
+        
+    def _enhance_metadata(self, metadata: SingleTableMetadata, data: pd.DataFrame) -> None:
+        """Enhance metadata with detailed type specifications and bounds.
+        
+        Args:
+            metadata: The basic metadata object to enhance
+            data: The input DataFrame to analyze
+        """
+        self.logger.info("Enhancing metadata with detailed type specifications and bounds")
+        
+        for column in data.columns:
+            column_data = data[column]
+            
+            # Skip non-numerical columns
+            if column not in metadata.columns or metadata.columns[column]['sdtype'] != 'numerical':
+                continue
+                
+            # Determine numerical subtype (int or float)
+            if pd.api.types.is_integer_dtype(column_data):
+                subtype = 'Int32'
+            else:
+                subtype = 'Float'
+                
+            metadata.update_column(
+                column_name=column,
+                sdtype='numerical',
+                computer_representation=subtype
+            )
+            
+            self.logger.info(f"Enhanced column '{column}': {subtype}")
+        
         return metadata
